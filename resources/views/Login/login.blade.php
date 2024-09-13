@@ -27,7 +27,7 @@
         </div>
       </nav>
     <div class="Caja">
-    <form action="../inicio/validar.php" method="post">
+    <form action="#" method="post">
 <h1 class="animate__animated animate__backInLeft">Inicio de sesion</h1>
 <p class="blanco">Usuario <input type="text" placeholder="ingrese su nombre" name="usuario"  autocomplete="new-usuario" required></p>
 <p class="blanco">Contraseña <input type="password" placeholder="ingrese su contraseña" name="password" autocomplete="new-password" required></p>
@@ -40,7 +40,7 @@
       <label  style="color: aliceblue; padding-right: 5px; font-family:'Courier New', Courier, monospace;">Recordar Contraseña</label>
     </div> 
   <p style="color: white;">¿Aún no tienes cuenta?</p>
-  <a href="../registro/register.php" class="aa">Registrate aquí</a>
+  <a href="#" class="aa">Registrate aquí</a>
 </form>
 </div> 
 

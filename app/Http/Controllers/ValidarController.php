@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ValidarController extends Controller
@@ -13,9 +14,20 @@ class ValidarController extends Controller
 
     public function login (Request $request)
     {
-        $creddencials = $request -> validate([
+        $credencials = $request -> validate([
             'usuario'=> 'required|string|max:10',
             'password'=> 'required|string',
         ]);
+
+        if (Auth::attempt($credencials)) {
+            $request->session()->regenerate();
+            $user = Auth::user(); 
+            
+            if ($user->rol === 'admin') {
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->rol === 'user') {
+                return redirect()->route('user.dashboard');
+            }
+        }
     }
 }
